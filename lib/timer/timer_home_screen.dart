@@ -5,12 +5,12 @@ import 'package:provider/provider.dart';
 
 import 'timer_provider.dart';
 
-class HomeScreen extends StatefulWidget {
+class TimerScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _TimerScreenState createState() => _TimerScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _TimerScreenState extends State<TimerScreen> {
   // int countDown = 1144;
 
   @override

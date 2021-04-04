@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider/timer_provider.dart';
+import 'package:flutter_provider/timer/timer_provider.dart';
 import 'package:provider/provider.dart';
 
-import 'home_screen.dart';
+import 'timer/timer_home_screen.dart';
 
 void main() {
   // runApp(
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeScreen(),
+      home: TimerScreen(),
     );
   }
 }
