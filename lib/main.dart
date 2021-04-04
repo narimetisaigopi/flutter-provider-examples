@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider/timer/timer_provider.dart';
+import 'package:flutter_provider/catalog/cart_provider.dart';
 import 'package:provider/provider.dart';
 
-import 'timer/timer_home_screen.dart';
+import 'catalog/catelog_screen.dart';
+import 'catalog/date_time_provider.dart';
 
 void main() {
-  // runApp(
-  //     ChangeNotifierProvider(create: (context) => CartBloc(), child: MyApp()));
-  runApp(ChangeNotifierProvider(
-      create: (context) => TimerProvider(), child: MyApp()));
+  // this is for timerprovider
+  // runApp(ChangeNotifierProvider(
+  //     create: (context) => TimerProvider(), child: MyApp()));
+  //
+  // single provider
+  // runApp(ChangeNotifierProvider(
+  //     create: (context) => CartProvider(), child: MyApp()));
+
+  //
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context) => CartProvider()),
+    ChangeNotifierProvider(create: (context) => DateTimeProvider())
+    // Provider<CartProvider>(
+    //   create: (context) => CartProvider(),
+    // ),
+    // Provider<DateTimeProvider>(
+    //   create: (context) => DateTimeProvider(),
+  ], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -34,7 +49,8 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: TimerScreen(),
+      // home: TimerScreen(),
+      home: CatalogScreen(),
     );
   }
 }
